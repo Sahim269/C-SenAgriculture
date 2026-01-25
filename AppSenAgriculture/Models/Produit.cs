@@ -23,5 +23,10 @@ namespace AppSenAgriculture.Models
 
         [ForeignKey("CategorieId")]
         public virtual Categorie Categorie { get; set; }
+
+        public int IdUniteMesure { get; set; }
+
+        [ForeignKey("IdUniteMesure")]
+        public virtual UniteMesure UniteMesure { get; set; }
     }
 }
