@@ -126,9 +126,13 @@
     <Compile Include="Models\Agriculteur.cs" />
     <Compile Include="Models\BdSenAgricultureContext.cs" />
     <Compile Include="Models\Categorie.cs" />
+    <Compile Include="Models\Champ.cs" />
+    <Compile Include="Models\Commune.cs" />
+    <Compile Include="Models\Departement.cs" />
     <Compile Include="Models\Facilitateur.cs" />
     <Compile Include="Models\Personne.cs" />
     <Compile Include="Models\Produit.cs" />
+    <Compile Include="Models\Region.cs" />
     <Compile Include="Models\UniteMesure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

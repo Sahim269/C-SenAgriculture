@@ -16,5 +16,9 @@ namespace AppSenAgriculture.Models
         public DbSet<Personne> Personnes { get; set; }
         public DbSet<Agriculteur> Agriculteurs { get; set; }
         public DbSet<Facilitateur> Facilitateurs { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Departement> Departements { get; set; }
+        public DbSet<Commune> Communes { get; set; }
+        public DbSet<Champ> Champs { get; set; }
     }
 }
