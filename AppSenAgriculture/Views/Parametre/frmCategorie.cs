@@ -74,7 +74,6 @@ namespace AppSenAgriculture.Views.Parametre
 
         private void btnSelection_Click(object sender, EventArgs e)
         {
-            txtLibelle.Text = DgCategorie.CurrentRow.Cells[1].Value.ToString();
         }
     }
 }

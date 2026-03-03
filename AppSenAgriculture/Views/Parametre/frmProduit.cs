@@ -198,5 +198,25 @@ namespace AppSenAgriculture.Views.Parametre
                 UniteMesure = db.UniteMesures.Find(u.IdUniteMesure).NameUnite
             }).ToList();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelGrid_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgProduits_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

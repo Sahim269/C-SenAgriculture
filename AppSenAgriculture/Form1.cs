@@ -28,5 +28,10 @@ namespace AppSenAgriculture
             f.Show();
             this.Hide();
         }
+
+        private void lblAppName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
