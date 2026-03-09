@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AppSenAgriculture.Models;
+using AppSenAgriculture.Helper;
 
 namespace AppSenAgriculture
 {
@@ -24,9 +26,34 @@ namespace AppSenAgriculture
 
         private void BtnConnexion_Click(object sender, EventArgs e)
         {
-            frmMDI f = new frmMDI();
-            f.Show();
-            this.Hide();
+          // Récupère les informations de connexion
+            string login = txtIdentifiant.Text.Trim();
+            string motDePasse = txtMotDePasse.Text;
+
+            // Vérifie que les champs ne sont pas vides
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(motDePasse))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Vérifie les informations de connexion dans la base de données
+            using (var context = new BdSenAgricultureContext())
+            {
+                var admin = context.Admins.FirstOrDefault(a => a.Login == login);
+                if (admin != null && CryptageHelper.VerifierMotDePasse(motDePasse, admin.MotDePasse))
+                {
+                    // Connexion réussie, ouvre le formulaire principal
+                    frmMDI mdiForm = new frmMDI();
+                    mdiForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // Connexion échouée, affiche un message d'erreur
+                    MessageBox.Show("Login ou mot de passe incorrect.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void lblAppName_Click(object sender, EventArgs e)

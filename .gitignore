@@ -1,3 +1,17 @@
 bin/ 
 obj/ 
 .vs/ 
+
+# Configuration locale de chaque développeur
+AppSenAgriculture/App.config
+AppSenAgriculture/App.config.old
+AppSenAgriculture/bin/Debug/AppSenAgriculture.exe.config
+
+# Packages NuGet (trop lourds, chaque dev les télécharge)
+packages/Npgsql.3.2.7/
+packages/Npgsql.3.2.7.nupkg
+packages/EntityFramework6.Npgsql.6.4.3/
+packages/EntityFramework6.Npgsql.6.4.3.nupkg
+
+# Fichier d'installation MySQL (inutile pour le projet)
+AppSenAgriculture/mysql-apt-config_0.8.29-1_all.deb
