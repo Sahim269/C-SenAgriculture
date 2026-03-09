@@ -22,11 +22,7 @@ namespace AppSenAgriculture.Models
         [Required, MaxLength(20)]
         public String TelephonePersonne { get; set; }
 
-        [Required, MaxLength(8)]
-        public String MotDePasse { get; set; }
+        
 
-
-        [Required, MaxLength(255)]
-        public String Login { get; set; }
     }
 }

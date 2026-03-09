@@ -2,6 +2,7 @@
 using System;
 using System.Globalization;
 using System.Windows.Forms;
+using AppSenAgriculture.Helper;
 
 namespace AppSenAgriculture
 {
@@ -20,13 +21,16 @@ namespace AppSenAgriculture
 
         private void seDeconnecterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            LogHelper.WriteAction("Admin", "Déconnexion");
             frmConnexion f = new frmConnexion();
             f.Show();
             this.Close();
+
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            LogHelper.WriteAction("Admin", "Déconnexion et fermeture de l'application");
             Application.Exit();
         }
 

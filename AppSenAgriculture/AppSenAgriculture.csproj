@@ -120,6 +120,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="itextsharp">
+     <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="ZstdSharp, Version=0.8.7.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
       <HintPath>..\packages\ZstdSharp.Port.0.8.7\lib\net462\ZstdSharp.dll</HintPath>
     </Reference>
@@ -139,6 +142,9 @@
     </Compile>
     <Compile Include="Helper\FillList.cs" />
     <Compile Include="Helper\CryptageHelper.cs" />
+    <Compile Include="Helper\LogHelper.cs" />
+    <Compile Include="Helper\RapportHelper.cs" />
+    <Compile Include="Helper\MailHelper.cs" />
     <Compile Include="Migrations\202602182006394_InitialCreate.cs" />
     <Compile Include="Migrations\202602182006394_InitialCreate.Designer.cs">
       <DependentUpon>202602182006394_InitialCreate.cs</DependentUpon>

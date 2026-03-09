@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+
 
 namespace AppSenAgriculture.Views.Parametre
 {
@@ -218,5 +220,46 @@ namespace AppSenAgriculture.Views.Parametre
         {
 
         }
+
+
+    // TODO : Créer un bouton "Générer PDF" dans le Designer (frmProduit.Designer.cs)
+    // Nom du bouton : btnGenererPDF
+    // Texte du bouton : "Générer PDF"
+    // Puis associer l'événement Click à cette méthode
+    private void btnGenererPDF_Click(object sender, EventArgs e)
+{
+    try
+    {
+        // Récupère la liste des produits depuis la base de données
+        using (var context = new BdSenAgricultureContext())
+        {
+            // Charge les produits avec leurs catégories associées
+            var produits = context.Produits.Include("Categorie").ToList();
+
+            // Génère le rapport PDF et récupère le chemin du fichier
+            string cheminPDF = RapportHelper.GenererRapportProduits(produits);
+
+            // Log de l'action
+            LogHelper.WriteAction("Admin", "Rapport PDF produits généré : " + cheminPDF);
+
+            // Informe l'utilisateur que le rapport a été généré
+            MessageBox.Show(
+                "Rapport généré avec succès !\n" + cheminPDF,
+                "Succès",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+        }
+    }
+    catch (Exception ex)
+    {
+        // Enregistre l'erreur dans les logs
+        LogHelper.WriteFileError("frmProduit.btnGenererPDF_Click : " + ex.ToString());
+
+        // Affiche un message d'erreur
+        MessageBox.Show("Erreur lors de la génération du rapport : " + ex.Message,
+            "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}   
     }
 }
