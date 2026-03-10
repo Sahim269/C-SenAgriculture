@@ -3,6 +3,7 @@ using System;
 using System.Globalization;
 using System.Windows.Forms;
 using AppSenAgriculture.Helper;
+using AppSenAgriculture.Views.Account;
 
 namespace AppSenAgriculture
 {
@@ -47,6 +48,15 @@ namespace AppSenAgriculture
         {
             fermer();
             frmCategorie f = new frmCategorie();
+            f.MdiParent = this;
+            f.Show();
+            f.WindowState = FormWindowState.Maximized;
+        }
+
+        private void ClientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fermer();
+            frmClient f = new frmClient();
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;

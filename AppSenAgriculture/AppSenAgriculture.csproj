@@ -140,6 +140,13 @@
     <Compile Include="frmMDI.Designer.cs">
       <DependentUpon>frmMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Compte\frmClient.cs">
+  <SubType>Form</SubType>
+</Compile>
+<Compile Include="Views\Compte\frmClient.Designer.cs">
+  <DependentUpon>frmClient.cs</DependentUpon>
+</Compile>
+
     <Compile Include="Helper\FillList.cs" />
     <Compile Include="Helper\CryptageHelper.cs" />
     <Compile Include="Helper\LogHelper.cs" />
@@ -152,6 +159,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agriculteur.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\BdSenAgricultureContext.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Champ.cs" />

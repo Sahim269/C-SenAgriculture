@@ -31,6 +31,7 @@
             this.produitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categorieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lieuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAccentTop = new System.Windows.Forms.Panel();
             this.panelTopBar = new System.Windows.Forms.Panel();
             this.lblAppLogo = new System.Windows.Forms.Label();
@@ -89,7 +90,8 @@
             this.parametresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produitsToolStripMenuItem,
             this.categorieToolStripMenuItem,
-            this.lieuToolStripMenuItem});
+            this.lieuToolStripMenuItem,
+            this.ClientToolStripMenuItem});
             this.parametresToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.parametresToolStripMenuItem.Name = "parametresToolStripMenuItem";
             this.parametresToolStripMenuItem.Size = new System.Drawing.Size(95, 25);
@@ -114,6 +116,15 @@
             this.lieuToolStripMenuItem.Name = "lieuToolStripMenuItem";
             this.lieuToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.lieuToolStripMenuItem.Text = "📍  Lieu";
+
+
+             // 
+            // ClientToolStripMenuItem
+            // 
+            this.ClientToolStripMenuItem.Name = "ClientToolStripMenuItem";
+            this.ClientToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.ClientToolStripMenuItem.Text = "👤  Client";
+            this.ClientToolStripMenuItem.Click += new System.EventHandler(this.ClientToolStripMenuItem_Click);
             // 
             // panelAccentTop
             // 
@@ -245,6 +256,7 @@
         private System.Windows.Forms.ToolStripMenuItem produitsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categorieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lieuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ClientToolStripMenuItem;
 
         // ──contrôles décoratifs ─────────────────────────────────────
         private System.Windows.Forms.Panel panelAccentTop;

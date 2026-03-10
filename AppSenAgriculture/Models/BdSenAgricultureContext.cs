@@ -20,6 +20,8 @@ namespace AppSenAgriculture.Models
         public DbSet<Commune> Communes { get; set; }
         public DbSet<Champ> Champs { get; set; }
         public DbSet<Admin> Admins { get; set; }
+
+        public DbSet<Client> Clients { get; set; }
      protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Supprime le préfixe "dbo." pour PostgreSQL
