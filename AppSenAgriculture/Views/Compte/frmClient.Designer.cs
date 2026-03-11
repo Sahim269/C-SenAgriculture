@@ -353,7 +353,7 @@ namespace AppSenAgriculture.Views.Account
             this.button1.TabIndex = 100;
             this.button1.Text = "🖨️ &Imprimer";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            //this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelGoldBar
             // 
@@ -373,7 +373,7 @@ namespace AppSenAgriculture.Views.Account
             this.lblNomPrenom.Size = new System.Drawing.Size(260, 16);
             this.lblNomPrenom.TabIndex = 90;
             this.lblNomPrenom.Text = "Nom";
-            this.lblNomPrenom.Click += new System.EventHandler(this.lblNomPrenom_Click);
+            //this.lblNomPrenom.Click += new System.EventHandler(this.lblNomPrenom_Click);
             // 
             // lblAdresse
             // 
