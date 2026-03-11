@@ -265,7 +265,7 @@ namespace AppSenAgriculture.Views.Account
             string erreurTel = ValidationHelper.MessageErreurTelephone(txtTelephone.Text);
             if (erreurTel != null)
             {
-                MessageBox.Show(erreurTel, "Attention, saisissez un numero de telephone valide ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(erreurTel, "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

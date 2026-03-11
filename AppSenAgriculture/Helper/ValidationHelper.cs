@@ -58,7 +58,7 @@ namespace AppSenAgriculture.Helper
                 return "Le numéro de téléphone est obligatoire.";
 
             if (!EstTelephoneValide(telephone))
-                return "Numéro invalide. Exemples valides : 77 123 45 67 / +221 77 123 45 67";
+                return "Numéro invalide, saisissez un numero de telephone valide  Exemples valides : 77 123 45 67 / +221 77 123 45 67";
 
             return null;
         }
