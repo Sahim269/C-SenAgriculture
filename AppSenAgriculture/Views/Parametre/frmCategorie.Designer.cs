@@ -38,6 +38,7 @@
             this.lblIdIcon = new System.Windows.Forms.Label();
             this.lblDescIcon = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgCategorie)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -240,6 +241,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
+            this.panelLeft.Controls.Add(this.button1);
             this.panelLeft.Controls.Add(this.btnSelection);
             this.panelLeft.Controls.Add(this.panelGoldBar);
             this.panelLeft.Controls.Add(this.lblIdIcon);
@@ -296,6 +298,22 @@
             this.panelRight.Size = new System.Drawing.Size(839, 518);
             this.panelRight.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(30, 30, 160);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(14, 374);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(242, 34);
+            this.button1.TabIndex = 98;
+            this.button1.Text = "🖨️  &Imprimer";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmCategorie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -342,5 +360,6 @@
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Label lblIdIcon;
         private System.Windows.Forms.Label lblDescIcon;
+        private System.Windows.Forms.Button button1;
     }
 }

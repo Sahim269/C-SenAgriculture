@@ -76,7 +76,8 @@ namespace AppSenAgriculture.Views.Account
         private void ResetForm()
         {
             _idClientSelectionne = 0;
-            txtNomPrenom.Clear();
+            txtNom.Clear();
+            txtPrenom.Clear();
             txtAdresse.Clear();
             txtEmail.Clear();
             txtTelephone.Clear();
@@ -97,7 +98,8 @@ namespace AppSenAgriculture.Views.Account
                 _idClientSelectionne = Convert.ToInt32(row.Cells[0].Value);
 
                 // Remplit les champs du formulaire
-                txtNomPrenom.Text = row.Cells[1].Value?.ToString() + " " + row.Cells[2].Value?.ToString();
+                txtNom.Text = row.Cells[1].Value?.ToString();
+                txtPrenom.Text = row.Cells[2].Value?.ToString();
                 txtAdresse.Text = row.Cells[3].Value?.ToString();
                 txtEmail.Text = row.Cells[4].Value?.ToString();
                 txtTelephone.Text = row.Cells[5].Value?.ToString();
@@ -114,10 +116,9 @@ namespace AppSenAgriculture.Views.Account
 
             try
             {
-                // Sépare le nom et le prénom
-                string[] nomPrenom = txtNomPrenom.Text.Trim().Split(' ');
-                string nom = nomPrenom[0];
-                string prenom = nomPrenom.Length > 1 ? string.Join(" ", nomPrenom, 1, nomPrenom.Length - 1) : "";
+                // Recuperer le nom et le prénom
+                string nom = txtNom.Text.Trim();
+                string prenom = txtPrenom.Text.Trim();
 
                 Client client = new Client
                 {
@@ -169,10 +170,8 @@ namespace AppSenAgriculture.Views.Account
                 if (client != null)
                 {
                     // Sépare le nom et le prénom
-                    string[] nomPrenom = txtNomPrenom.Text.Trim().Split(' ');
-                    client.NomPersonne = nomPrenom[0];
-                    client.PrenomPersonne = nomPrenom.Length > 1
-                        ? string.Join(" ", nomPrenom, 1, nomPrenom.Length - 1) : "";
+                    client.NomPersonne = txtNom.Text.Trim(); ;
+                    client.PrenomPersonne = txtPrenom.Text.Trim();
                     client.AdresseClient = txtAdresse.Text.Trim();
                     client.EmailPersonne = txtEmail.Text.Trim();
                     client.TelephonePersonne = txtTelephone.Text.Trim();
@@ -251,7 +250,7 @@ namespace AppSenAgriculture.Views.Account
         /// </summary>
         private bool ValiderChamps()
         {
-            if (string.IsNullOrEmpty(txtNomPrenom.Text) ||
+            if (string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtPrenom.Text) ||
                 string.IsNullOrEmpty(txtTelephone.Text))
             {
                 MessageBox.Show("Veuillez remplir les champs obligatoires.",
@@ -259,6 +258,16 @@ namespace AppSenAgriculture.Views.Account
                 return false;
             }
             return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNomPrenom_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

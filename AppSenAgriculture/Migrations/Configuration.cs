@@ -10,7 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            //AutomaticMigrationDataLossAllowed = true; // Ajoutez ceci si vous acceptez les pertes de données potentielles
+            AutomaticMigrationDataLossAllowed = true; // Ajoutez ceci si vous acceptez les pertes de données potentielles
 
         }
 
