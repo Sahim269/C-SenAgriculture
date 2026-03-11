@@ -81,5 +81,36 @@ namespace AppSenAgriculture
         {
 
         }
+
+        private void frmConnexion_Load(object sender, EventArgs e)
+        {
+            using (var context = new BdSenAgricultureContext())
+            {
+                if (!context.Admins.Any())
+                {
+                    // Crée un compte administrateur par défaut
+                    Admin admin = new Admin
+                    {
+                        NomPersonne = "Admin",
+                        PrenomPersonne="Admin",
+                        TelephonePersonne="777756224",
+                        Login = "admin",
+                        MotDePasse = CryptageHelper.HacherMotDePasse("admin123") // Mot de passe par défaut
+                    };
+                    context.Admins.Add(admin);
+                    try
+                    {
+                        context.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Enregistre l'erreur dans les logs
+                        LogHelper.WriteFileError("frmConnexion.frmConnexion_Load : " + ex.ToString());
+                        // Affiche un message d'erreur à l'utilisateur
+                        MessageBox.Show("Erreur lors de la création du compte administrateur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,14 +1,17 @@
 ﻿using System.Data.Entity;
+using MySql.Data.EntityFramework; 
+
 
 namespace AppSenAgriculture.Models
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class BdSenAgricultureContext : DbContext
     {
-        public BdSenAgricultureContext() : base("name=connSenAgriculture")
+        public BdSenAgricultureContext() : base("connSenAgriculture")
         {
-            Database.SetInitializer<BdSenAgricultureContext>(
-            new CreateDatabaseIfNotExists<BdSenAgricultureContext>()
-            );
+            //Database.SetInitializer<BdSenAgricultureContext>(
+            //new CreateDatabaseIfNotExists<BdSenAgricultureContext>()
+            //);
         }
 
         public DbSet<Categorie> Categories { get; set; }
@@ -25,7 +28,7 @@ namespace AppSenAgriculture.Models
      protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Supprime le préfixe "dbo." pour PostgreSQL
-            modelBuilder.HasDefaultSchema("public");
+            //modelBuilder.HasDefaultSchema("public");
             base.OnModelCreating(modelBuilder);
         }
     }
