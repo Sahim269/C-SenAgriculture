@@ -170,7 +170,7 @@ namespace AppSenAgriculture.Views.Account
                 if (client != null)
                 {
                     // Sépare le nom et le prénom
-                    client.NomPersonne = txtNom.Text.Trim(); ;
+                    client.NomPersonne = txtNom.Text.Trim();
                     client.PrenomPersonne = txtPrenom.Text.Trim();
                     client.AdresseClient = txtAdresse.Text.Trim();
                     client.EmailPersonne = txtEmail.Text.Trim();
