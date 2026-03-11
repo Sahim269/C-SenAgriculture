@@ -1,17 +1,18 @@
 ﻿using System.Data.Entity;
-using MySql.Data.EntityFramework; 
+using AppSenAgriculture.Config;
+
 
 
 namespace AppSenAgriculture.Models
 {
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
+    [DbConfigurationType(typeof(NpgsqlConfiguration))]
     public class BdSenAgricultureContext : DbContext
     {
         public BdSenAgricultureContext() : base("connSenAgriculture")
         {
-            //Database.SetInitializer<BdSenAgricultureContext>(
-            //new CreateDatabaseIfNotExists<BdSenAgricultureContext>()
-            //);
+            Database.SetInitializer<BdSenAgricultureContext>(
+            new CreateDatabaseIfNotExists<BdSenAgricultureContext>()
+            );
         }
 
         public DbSet<Categorie> Categories { get; set; }
@@ -27,9 +28,16 @@ namespace AppSenAgriculture.Models
         public DbSet<Client> Clients { get; set; }
      protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Supprime le préfixe "dbo." pour PostgreSQL
-            //modelBuilder.HasDefaultSchema("public");
+
+             // Applique le schéma "public" uniquement pour PostgreSQL
+            // MySQL n'utilise pas de schéma
+            if (Database.Connection.GetType().Name.Contains("Npgsql"))
+            {
+                modelBuilder.HasDefaultSchema("public");
+            }
             base.OnModelCreating(modelBuilder);
+                    
         }
+    
     }
 }

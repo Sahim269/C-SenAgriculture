@@ -118,7 +118,6 @@ namespace AppSenAgriculture.Views.Account
                 string[] nomPrenom = txtNomPrenom.Text.Trim().Split(' ');
                 string nom = nomPrenom[0];
                 string prenom = nomPrenom.Length > 1 ? string.Join(" ", nomPrenom, 1, nomPrenom.Length - 1) : "";
-
                 Client client = new Client
                 {
                     NomPersonne = nom,
@@ -172,7 +171,7 @@ namespace AppSenAgriculture.Views.Account
                     string[] nomPrenom = txtNomPrenom.Text.Trim().Split(' ');
                     client.NomPersonne = nomPrenom[0];
                     client.PrenomPersonne = nomPrenom.Length > 1
-                        ? string.Join(" ", nomPrenom, 1, nomPrenom.Length - 1) : "";
+                    ? string.Join(" ", nomPrenom, 1, nomPrenom.Length - 1) : "";
                     client.AdresseClient = txtAdresse.Text.Trim();
                     client.EmailPersonne = txtEmail.Text.Trim();
                     client.TelephonePersonne = txtTelephone.Text.Trim();
@@ -248,17 +247,26 @@ namespace AppSenAgriculture.Views.Account
 
         /// <summary>
         /// Valide les champs obligatoires du formulaire.
+        /// Vérifie notamment que le nom/prénom et le téléphone sont valides.
         /// </summary>
         private bool ValiderChamps()
         {
-            if (string.IsNullOrEmpty(txtNomPrenom.Text) ||
-                string.IsNullOrEmpty(txtTelephone.Text))
+           if (string.IsNullOrEmpty(txtNomPrenom.Text))
             {
-                MessageBox.Show("Veuillez remplir les champs obligatoires.",
+                MessageBox.Show("Le nom et prénom sont obligatoires.",
                     "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            // Vérifie le numéro de téléphone
+            string erreurTel = ValidationHelper.MessageErreurTelephone(txtTelephone.Text);
+            if (erreurTel != null)
+            {
+                MessageBox.Show(erreurTel, "Attention, saisissez un numero de telephone valide ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
-        }
+                }
     }
 }

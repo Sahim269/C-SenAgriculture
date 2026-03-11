@@ -52,7 +52,6 @@ namespace AppSenAgriculture
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
-
         private void ClientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fermer();
@@ -61,7 +60,6 @@ namespace AppSenAgriculture
             f.Show();
             f.WindowState = FormWindowState.Maximized;
         }
-
         private void frmMDI_Load(object sender, EventArgs e)
         {
             // Maximized respecte les Dock (StatusBar visible)
