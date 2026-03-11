@@ -34,11 +34,11 @@
             this.lblPageIcon = new System.Windows.Forms.Label();
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnImprimer = new System.Windows.Forms.Button();
             this.panelGoldBar = new System.Windows.Forms.Panel();
             this.lblIdIcon = new System.Windows.Forms.Label();
             this.lblDescIcon = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgCategorie)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -241,7 +241,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
-            this.panelLeft.Controls.Add(this.button1);
+            this.panelLeft.Controls.Add(this.btnImprimer);
             this.panelLeft.Controls.Add(this.btnSelection);
             this.panelLeft.Controls.Add(this.panelGoldBar);
             this.panelLeft.Controls.Add(this.lblIdIcon);
@@ -258,6 +258,23 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(270, 518);
             this.panelLeft.TabIndex = 1;
+            // 
+            // btnImprimer
+            // 
+            this.btnImprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(160)))));
+            this.btnImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimer.FlatAppearance.BorderSize = 0;
+            this.btnImprimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btnImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnImprimer.ForeColor = System.Drawing.Color.White;
+            this.btnImprimer.Location = new System.Drawing.Point(14, 443);
+            this.btnImprimer.Name = "btnImprimer";
+            this.btnImprimer.Size = new System.Drawing.Size(242, 34);
+            this.btnImprimer.TabIndex = 98;
+            this.btnImprimer.Text = "🖨️  &Imprimer";
+            this.btnImprimer.UseVisualStyleBackColor = false;
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
             // 
             // panelGoldBar
             // 
@@ -297,22 +314,6 @@
             this.panelRight.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.panelRight.Size = new System.Drawing.Size(839, 518);
             this.panelRight.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(30, 30, 160);
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(14, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 34);
-            this.button1.TabIndex = 98;
-            this.button1.Text = "🖨️  &Imprimer";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmCategorie
             // 
@@ -360,6 +361,6 @@
         private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.Label lblIdIcon;
         private System.Windows.Forms.Label lblDescIcon;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImprimer;
     }
 }

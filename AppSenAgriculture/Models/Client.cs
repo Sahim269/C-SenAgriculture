@@ -21,4 +21,14 @@ namespace AppSenAgriculture.Models
         [MaxLength(100)]
         public string ProfessionClient { get; set; }
     }
+
+    public class ReportListeClient {         
+        public int IdPersonne { get; set; }
+        public string NomPersonne { get; set; }
+        public string PrenomPersonne { get; set; }
+        public string AdresseClient { get; set; }
+        public string EmailPersonne { get; set; }
+        public string TelephonePersonne { get; set; }
+        public string ProfessionClient { get; set; }
+    }
 }

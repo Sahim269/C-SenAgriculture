@@ -28,7 +28,6 @@ namespace AppSenAgriculture.Views.Account
             this.txtAdresse = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTelephone = new System.Windows.Forms.TextBox();
-            this.txtIdentifiant = new System.Windows.Forms.TextBox();
             this.txtProfession = new System.Windows.Forms.TextBox();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
@@ -38,17 +37,16 @@ namespace AppSenAgriculture.Views.Account
             this.lblPageIcon = new System.Windows.Forms.Label();
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.btnImprimer = new System.Windows.Forms.Button();
             this.panelGoldBar = new System.Windows.Forms.Panel();
             this.lblNomPrenom = new System.Windows.Forms.Label();
             this.lblAdresse = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblTelephone = new System.Windows.Forms.Label();
-            this.lblIdentifiant = new System.Windows.Forms.Label();
             this.lblProfession = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPrenom = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -100,6 +98,7 @@ namespace AppSenAgriculture.Views.Account
             this.dgvClients.Size = new System.Drawing.Size(897, 662);
             this.dgvClients.TabIndex = 0;
             this.dgvClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellClick);
+            this.dgvClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -194,24 +193,13 @@ namespace AppSenAgriculture.Views.Account
             this.txtTelephone.Size = new System.Drawing.Size(268, 30);
             this.txtTelephone.TabIndex = 94;
             // 
-            // txtIdentifiant
-            // 
-            this.txtIdentifiant.BackColor = System.Drawing.Color.White;
-            this.txtIdentifiant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdentifiant.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(35)))), ((int)(((byte)(20)))));
-            this.txtIdentifiant.Location = new System.Drawing.Point(14, 317);
-            this.txtIdentifiant.Name = "txtIdentifiant";
-            this.txtIdentifiant.Size = new System.Drawing.Size(268, 30);
-            this.txtIdentifiant.TabIndex = 95;
-            // 
             // txtProfession
             // 
             this.txtProfession.BackColor = System.Drawing.Color.White;
             this.txtProfession.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProfession.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtProfession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(35)))), ((int)(((byte)(20)))));
-            this.txtProfession.Location = new System.Drawing.Point(14, 373);
+            this.txtProfession.Location = new System.Drawing.Point(14, 317);
             this.txtProfession.Name = "txtProfession";
             this.txtProfession.Size = new System.Drawing.Size(268, 30);
             this.txtProfession.TabIndex = 96;
@@ -225,7 +213,7 @@ namespace AppSenAgriculture.Views.Account
             this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAjouter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAjouter.ForeColor = System.Drawing.Color.White;
-            this.btnAjouter.Location = new System.Drawing.Point(14, 421);
+            this.btnAjouter.Location = new System.Drawing.Point(14, 365);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(268, 34);
             this.btnAjouter.TabIndex = 97;
@@ -242,7 +230,7 @@ namespace AppSenAgriculture.Views.Account
             this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifier.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnModifier.ForeColor = System.Drawing.Color.White;
-            this.btnModifier.Location = new System.Drawing.Point(14, 463);
+            this.btnModifier.Location = new System.Drawing.Point(14, 407);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(268, 34);
             this.btnModifier.TabIndex = 98;
@@ -259,7 +247,7 @@ namespace AppSenAgriculture.Views.Account
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupprimer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSupprimer.ForeColor = System.Drawing.Color.White;
-            this.btnSupprimer.Location = new System.Drawing.Point(14, 505);
+            this.btnSupprimer.Location = new System.Drawing.Point(14, 449);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(268, 34);
             this.btnSupprimer.TabIndex = 99;
@@ -315,7 +303,7 @@ namespace AppSenAgriculture.Views.Account
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
             this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.txtPrenom);
-            this.panelLeft.Controls.Add(this.button1);
+            this.panelLeft.Controls.Add(this.btnImprimer);
             this.panelLeft.Controls.Add(this.panelGoldBar);
             this.panelLeft.Controls.Add(this.lblNomPrenom);
             this.panelLeft.Controls.Add(this.txtNom);
@@ -325,8 +313,6 @@ namespace AppSenAgriculture.Views.Account
             this.panelLeft.Controls.Add(this.txtEmail);
             this.panelLeft.Controls.Add(this.lblTelephone);
             this.panelLeft.Controls.Add(this.txtTelephone);
-            this.panelLeft.Controls.Add(this.lblIdentifiant);
-            this.panelLeft.Controls.Add(this.txtIdentifiant);
             this.panelLeft.Controls.Add(this.lblProfession);
             this.panelLeft.Controls.Add(this.txtProfession);
             this.panelLeft.Controls.Add(this.btnAjouter);
@@ -338,22 +324,44 @@ namespace AppSenAgriculture.Views.Account
             this.panelLeft.Size = new System.Drawing.Size(300, 678);
             this.panelLeft.TabIndex = 1;
             // 
-            // button1
+            // label1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(160)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(14, 549);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 34);
-            this.button1.TabIndex = 100;
-            this.button1.Text = "🖨️ &Imprimer";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(110)))), ((int)(((byte)(75)))));
+            this.label1.Location = new System.Drawing.Point(14, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 16);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "Prenom";
+            // 
+            // txtPrenom
+            // 
+            this.txtPrenom.BackColor = System.Drawing.Color.White;
+            this.txtPrenom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrenom.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPrenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(35)))), ((int)(((byte)(20)))));
+            this.txtPrenom.Location = new System.Drawing.Point(14, 94);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(268, 30);
+            this.txtPrenom.TabIndex = 102;
+            // 
+            // btnImprimer
+            // 
+            this.btnImprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(160)))));
+            this.btnImprimer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimer.FlatAppearance.BorderSize = 0;
+            this.btnImprimer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btnImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnImprimer.ForeColor = System.Drawing.Color.White;
+            this.btnImprimer.Location = new System.Drawing.Point(14, 563);
+            this.btnImprimer.Name = "btnImprimer";
+            this.btnImprimer.Size = new System.Drawing.Size(268, 34);
+            this.btnImprimer.TabIndex = 100;
+            this.btnImprimer.Text = "🖨️ &Imprimer";
+            this.btnImprimer.UseVisualStyleBackColor = false;
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
             // 
             // panelGoldBar
             // 
@@ -408,23 +416,12 @@ namespace AppSenAgriculture.Views.Account
             this.lblTelephone.TabIndex = 93;
             this.lblTelephone.Text = "Telephone";
             // 
-            // lblIdentifiant
-            // 
-            this.lblIdentifiant.BackColor = System.Drawing.Color.Transparent;
-            this.lblIdentifiant.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.lblIdentifiant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(110)))), ((int)(((byte)(75)))));
-            this.lblIdentifiant.Location = new System.Drawing.Point(14, 299);
-            this.lblIdentifiant.Name = "lblIdentifiant";
-            this.lblIdentifiant.Size = new System.Drawing.Size(260, 16);
-            this.lblIdentifiant.TabIndex = 94;
-            this.lblIdentifiant.Text = "Identifiant";
-            // 
             // lblProfession
             // 
             this.lblProfession.BackColor = System.Drawing.Color.Transparent;
             this.lblProfession.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.lblProfession.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(110)))), ((int)(((byte)(75)))));
-            this.lblProfession.Location = new System.Drawing.Point(14, 355);
+            this.lblProfession.Location = new System.Drawing.Point(14, 299);
             this.lblProfession.Name = "lblProfession";
             this.lblProfession.Size = new System.Drawing.Size(260, 16);
             this.lblProfession.TabIndex = 95;
@@ -440,28 +437,6 @@ namespace AppSenAgriculture.Views.Account
             this.panelRight.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.panelRight.Size = new System.Drawing.Size(915, 678);
             this.panelRight.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(110)))), ((int)(((byte)(75)))));
-            this.label1.Location = new System.Drawing.Point(14, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 16);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "Prenom";
-            // 
-            // txtPrenom
-            // 
-            this.txtPrenom.BackColor = System.Drawing.Color.White;
-            this.txtPrenom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrenom.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPrenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(35)))), ((int)(((byte)(20)))));
-            this.txtPrenom.Location = new System.Drawing.Point(14, 94);
-            this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(268, 30);
-            this.txtPrenom.TabIndex = 102;
             // 
             // frmClient
             // 
@@ -491,7 +466,6 @@ namespace AppSenAgriculture.Views.Account
         private System.Windows.Forms.TextBox txtAdresse;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTelephone;
-        private System.Windows.Forms.TextBox txtIdentifiant;
         private System.Windows.Forms.TextBox txtProfession;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnModifier;
@@ -511,7 +485,6 @@ namespace AppSenAgriculture.Views.Account
         private System.Windows.Forms.Label lblAdresse;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblTelephone;
-        private System.Windows.Forms.Label lblIdentifiant;
         private System.Windows.Forms.Label lblProfession;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -520,7 +493,7 @@ namespace AppSenAgriculture.Views.Account
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnImprimer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPrenom;
     }

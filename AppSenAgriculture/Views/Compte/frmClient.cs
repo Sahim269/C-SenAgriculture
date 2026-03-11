@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using AppSenAgriculture.Helper;
 using AppSenAgriculture.Models;
+using AppSenAgriculture.Views.Compte;
 
 namespace AppSenAgriculture.Views.Account
 {
@@ -81,7 +82,6 @@ namespace AppSenAgriculture.Views.Account
             txtAdresse.Clear();
             txtEmail.Clear();
             txtTelephone.Clear();
-            txtIdentifiant.Clear();
             txtProfession.Clear();
         }
 
@@ -260,13 +260,20 @@ namespace AppSenAgriculture.Views.Account
             return true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void lblNomPrenom_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblNomPrenom_Click(object sender, EventArgs e)
+        private void dgvClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void btnImprimer_Click(object sender, EventArgs e)
+        {
+            frmPrintClient f = new frmPrintClient();
+            f.ShowDialog();
 
         }
     }

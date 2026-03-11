@@ -75,5 +75,11 @@ namespace AppSenAgriculture.Views.Parametre
         private void btnSelection_Click(object sender, EventArgs e)
         {
         }
+
+        private void btnImprimer_Click(object sender, EventArgs e)
+        {
+            frmPrintCategorie frm = new frmPrintCategorie();
+            frm.ShowDialog();
+        }
     }
 }

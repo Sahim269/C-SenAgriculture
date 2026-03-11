@@ -20,4 +20,13 @@ namespace AppSenAgriculture.Models
         public virtual ICollection<Produit> Produits { get; set; }
 
     }
+
+
+    public class ReportListeCategorie
+    {
+        public string LibelleCategorie { get; set; }
+        public string DescriptionCategorie { get; set; }
+    }
+        
+    
 }
