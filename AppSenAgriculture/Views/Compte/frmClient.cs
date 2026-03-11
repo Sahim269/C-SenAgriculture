@@ -76,7 +76,8 @@ namespace AppSenAgriculture.Views.Account
         private void ResetForm()
         {
             _idClientSelectionne = 0;
-            txtNomPrenom.Clear();
+            txtNom.Clear();
+            txtPrenom.Clear();
             txtAdresse.Clear();
             txtEmail.Clear();
             txtTelephone.Clear();
@@ -97,7 +98,8 @@ namespace AppSenAgriculture.Views.Account
                 _idClientSelectionne = Convert.ToInt32(row.Cells[0].Value);
 
                 // Remplit les champs du formulaire
-                txtNomPrenom.Text = row.Cells[1].Value?.ToString() + " " + row.Cells[2].Value?.ToString();
+                txtNom.Text = row.Cells[1].Value?.ToString();
+                txtPrenom.Text = row.Cells[2].Value?.ToString();
                 txtAdresse.Text = row.Cells[3].Value?.ToString();
                 txtEmail.Text = row.Cells[4].Value?.ToString();
                 txtTelephone.Text = row.Cells[5].Value?.ToString();
@@ -114,10 +116,11 @@ namespace AppSenAgriculture.Views.Account
 
             try
             {
-                // Sépare le nom et le prénom
-                string[] nomPrenom = txtNomPrenom.Text.Trim().Split(' ');
-                string nom = nomPrenom[0];
-                string prenom = nomPrenom.Length > 1 ? string.Join(" ", nomPrenom, 1, nomPrenom.Length - 1) : "";
+                // Recuperer le nom et le prénom
+                string nom = txtNom.Text.Trim();
+                string prenom = txtPrenom.Text.Trim();
+
+            
                 Client client = new Client
                 {
                     NomPersonne = nom,
@@ -251,7 +254,7 @@ namespace AppSenAgriculture.Views.Account
         /// </summary>
         private bool ValiderChamps()
         {
-           if (string.IsNullOrEmpty(txtNomPrenom.Text))
+           if (string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtPrenom.Text))
             {
                 MessageBox.Show("Le nom et prénom sont obligatoires.",
                     "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
