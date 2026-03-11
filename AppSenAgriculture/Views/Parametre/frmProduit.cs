@@ -41,7 +41,7 @@ namespace AppSenAgriculture.Views.Parametre
                 u.DescriptionProduit,
                 u.PrixUnitaireMin,
                 u.PrixUnitaireMax,
-                Categorie = u.Categorie.DescriptionCategorie,
+                Categorie = u.Categorie.LibelleCategorie,
                 UniteMesure = u.UniteMesure.NameUnite
             }
 
@@ -97,68 +97,99 @@ namespace AppSenAgriculture.Views.Parametre
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Produit p = new Produit();
-            // Validation robuste avant conversion
-            var sel = Convert.ToString(cbbUniteMesure.SelectedValue);
-            if (int.TryParse(sel, out int idUnite))
+            try
             {
-                p.IdUniteMesure = idUnite;
-            }
-            else
-            {
-                // Mapper les codes texte vers des ids connus ou gérer l'erreur utilisateur
-                switch (sel)
-                {
-                    case "g": p.IdUniteMesure = 1; break;
-                    case "kg": p.IdUniteMesure = 2; break;
-                    default:
-                        MessageBox.Show("Unité invalide, veuillez sélectionner une unité valide.");
-                        return;
-                }
-            }
+                Produit p = new Produit();
+                // Validation robuste avant conversion
+                var sel = cbbUniteMesure.SelectedValue;
 
-            p.CategorieId = int.Parse(cbbCategorie.SelectedValue.ToString());
-            p.LibelleProduit = txtLibelle.Text;
-            p.DescriptionProduit = txtDescription.Text;
-            p.PrixUnitaireMax = double.Parse(txtPrixUnitaireMax.Text);
-            p.PrixUnitaireMin = double.Parse(txtPrixUnitaireMin.Text);
-            db.Produits.Add(p);
-            db.SaveChanges();
-            ResetFrom();
+                int? idUnite = db.UniteMesures.Where(u => u.CodeUnite == sel).Select(u => u.idUnite).FirstOrDefault();
+
+                if (!idUnite.HasValue)
+                {
+                    MessageBox.Show("Veuillez selectionner une unité de mesure valide.");
+                    return;
+                }
+
+                if (int.Parse(txtPrixUnitaireMax.Text) < int.Parse(txtPrixUnitaireMin.Text))
+                {
+                    MessageBox.Show("Le prix minimum ne doit pas etre superieur au prix maximum");
+                    return;
+                }
+
+                p.IdUniteMesure = (int)idUnite;
+                p.CategorieId = int.Parse(cbbCategorie.SelectedValue.ToString());
+                p.LibelleProduit = txtLibelle.Text;
+                p.DescriptionProduit = txtDescription.Text;
+                p.PrixUnitaireMax = double.Parse(txtPrixUnitaireMax.Text);
+                p.PrixUnitaireMin = double.Parse(txtPrixUnitaireMin.Text);
+                db.Produits.Add(p);
+
+                db.SaveChanges();
+                ResetFrom();
+
+            }
+            catch
+            {
+                MessageBox.Show("Erreur lors de la creation du produit");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Produit p = new Produit();
+            try
+            {
+                Produit p = db.Produits.Find(dgProduits.CurrentRow.Cells[0].Value);
 
-            p.CategorieId = int.Parse(cbbCategorie.SelectedValue.ToString());
-            p.LibelleProduit = txtLibelle.Text;
-            p.DescriptionProduit = txtDescription.Text;
-            p.PrixUnitaireMax = double.Parse(txtPrixUnitaireMax.Text);
-            p.PrixUnitaireMin = double.Parse(txtPrixUnitaireMin.Text);
-            db.SaveChanges();
-            ResetFrom();
+                p.CategorieId = int.Parse(cbbCategorie.SelectedValue.ToString());
+                p.LibelleProduit = txtLibelle.Text;
+                p.DescriptionProduit = txtDescription.Text;
+                p.PrixUnitaireMax = double.Parse(txtPrixUnitaireMax.Text);
+                p.PrixUnitaireMin = double.Parse(txtPrixUnitaireMin.Text);
+                p.IdUniteMesure = int.Parse(cbbUniteMesure.SelectedValue.ToString());
+                db.SaveChanges();
+                ResetFrom();
+            }
+            catch
+            {
+                MessageBox.Show("Erreur ");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(dgProduits.CurrentRow.Cells[0].Value.ToString());
-            var p = db.Produits.Find(id);
-            db.Produits.Remove(p);
-            db.SaveChanges();
-            ResetFrom();
+            try
+            {
+                int? id = int.Parse(dgProduits.CurrentRow.Cells[0].Value.ToString());
+                var p = db.Produits.Find(id);
+                db.Produits.Remove(p);
+                db.SaveChanges();
+                ResetFrom();
+            }
+            catch
+            {
+                MessageBox.Show("Erreur lors de la suppression");
+            }
         }
 
         private void btnSelection_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(dgProduits.CurrentRow.Cells[0].Value.ToString());
-            var p = db.Produits.Find(id);
-            txtDescription.Text = p.DescriptionProduit;
-            txtLibelle.Text = p.LibelleProduit;
-            txtPrixUnitaireMax.Text = p.PrixUnitaireMax.ToString();
-            txtPrixUnitaireMin.Text = p.PrixUnitaireMin.ToString();
-            cbbCategorie.SelectedIndex = p.CategorieId;
-            cbbUniteMesure.SelectedIndex = p.IdUniteMesure;
+            try
+            {
+                int? id = int.Parse(dgProduits.CurrentRow.Cells[0].Value.ToString());
+                var p = db.Produits.Find(id);
+
+                txtDescription.Text = p.DescriptionProduit;
+                txtLibelle.Text = p.LibelleProduit;
+                txtPrixUnitaireMax.Text = p.PrixUnitaireMax.ToString();
+                txtPrixUnitaireMin.Text = p.PrixUnitaireMin.ToString();
+                cbbCategorie.SelectedValue = p.CategorieId.ToString();
+                cbbUniteMesure.SelectedValue = p.IdUniteMesure.ToString();
+            }
+            catch
+            {
+               
+            }
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
@@ -196,7 +227,7 @@ namespace AppSenAgriculture.Views.Parametre
                 u.DescriptionProduit,
                 u.PrixUnitaireMin,
                 u.PrixUnitaireMax,
-                Categorie = db.Categories.Find(u.CategorieId).DescriptionCategorie,
+                Categorie = db.Categories.Find(u.CategorieId).LibelleCategorie,
                 UniteMesure = db.UniteMesures.Find(u.IdUniteMesure).NameUnite
             }).ToList();
         }

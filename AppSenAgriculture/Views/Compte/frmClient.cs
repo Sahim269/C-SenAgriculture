@@ -120,6 +120,7 @@ namespace AppSenAgriculture.Views.Account
                 string nom = txtNom.Text.Trim();
                 string prenom = txtPrenom.Text.Trim();
 
+            
                 Client client = new Client
                 {
                     NomPersonne = nom,
@@ -170,7 +171,7 @@ namespace AppSenAgriculture.Views.Account
                 if (client != null)
                 {
                     // Sépare le nom et le prénom
-                    client.NomPersonne = txtNom.Text.Trim(); ;
+                    client.NomPersonne = txtNom.Text.Trim();
                     client.PrenomPersonne = txtPrenom.Text.Trim();
                     client.AdresseClient = txtAdresse.Text.Trim();
                     client.EmailPersonne = txtEmail.Text.Trim();
@@ -247,16 +248,25 @@ namespace AppSenAgriculture.Views.Account
 
         /// <summary>
         /// Valide les champs obligatoires du formulaire.
+        /// Vérifie notamment que le nom/prénom et le téléphone sont valides.
         /// </summary>
         private bool ValiderChamps()
         {
-            if (string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtPrenom.Text) ||
-                string.IsNullOrEmpty(txtTelephone.Text))
+           if (string.IsNullOrEmpty(txtNom.Text) || string.IsNullOrEmpty(txtPrenom.Text))
             {
-                MessageBox.Show("Veuillez remplir les champs obligatoires.",
+                MessageBox.Show("Le nom et prénom sont obligatoires.",
                     "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            // Vérifie le numéro de téléphone
+            string erreurTel = ValidationHelper.MessageErreurTelephone(txtTelephone.Text);
+            if (erreurTel != null)
+            {
+                MessageBox.Show(erreurTel, "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             return true;
         }
 

@@ -35,45 +35,78 @@ namespace AppSenAgriculture.Views.Parametre
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            Categorie cat = new Categorie()
+            try
             {
-                LibelleCategorie = txtLibelle.Text,
-                DescriptionCategorie = txtDescription.Text
-            };
-            //Ajouter la catégorie dans la base de données cache
-            db.Categories.Add(cat);
-            //Ajouter dans la base de données physique
-            db.SaveChanges();
-            effacer_champs();
+                Categorie cat = new Categorie()
+                {
+                    LibelleCategorie = txtLibelle.Text,
+                    DescriptionCategorie = txtDescription.Text
+                };
+                //Ajouter la catégorie dans la base de données cache
+                db.Categories.Add(cat);
+                //Ajouter dans la base de données physique
+                db.SaveChanges();
+                effacer_champs();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l'ajout ");
+            }
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(DgCategorie.CurrentRow.Cells[0].Value.ToString());
-            Categorie cat = db.Categories.Find(id);
-            if (cat != null)
+            try
             {
-                cat.LibelleCategorie = txtLibelle.Text;
-                cat.DescriptionCategorie = txtDescription.Text;
-                db.SaveChanges();
-                effacer_champs();
+                int? id = int.Parse(DgCategorie.CurrentRow.Cells[0].Value.ToString());
+                Categorie cat = db.Categories.Find(id);
+                if (cat != null)
+                {
+                    cat.LibelleCategorie = txtLibelle.Text;
+                    cat.DescriptionCategorie = txtDescription.Text;
+                    db.SaveChanges();
+                    effacer_champs();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erreur lors de la modification");
             }
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            int? id = int.Parse(DgCategorie.CurrentRow.Cells[0].Value.ToString());
-            Categorie cat = db.Categories.Find(id);
-            if (cat != null)
+            try
             {
-                db.Categories.Remove(cat);
-                db.SaveChanges();
-                effacer_champs();
+                int? id = int.Parse(DgCategorie.CurrentRow.Cells[0].Value.ToString());
+                Categorie cat = db.Categories.Find(id);
+                if (cat != null)
+                {
+                    db.Categories.Remove(cat);
+                    db.SaveChanges();
+                    effacer_champs();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erreur lors de la suppression");
             }
         }
 
         private void btnSelection_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int? id = int.Parse(DgCategorie.CurrentRow.Cells[0].Value.ToString());
+                var c = db.Categories.Find(id);
+
+                    txtDescription.Text = c.DescriptionCategorie;
+                    txtLibelle.Text = c.LibelleCategorie;
+            }
+            catch
+            {
+                MessageBox.Show("Erreur lors de la selection");
+            }
         }
 
         private void btnImprimer_Click(object sender, EventArgs e)

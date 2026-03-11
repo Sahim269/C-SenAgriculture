@@ -74,6 +74,7 @@
             this.DgCategorie.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(195)))), ((int)(((byte)(160)))));
             this.DgCategorie.Location = new System.Drawing.Point(9, 8);
             this.DgCategorie.Name = "DgCategorie";
+            this.DgCategorie.ReadOnly = true;
             this.DgCategorie.RowHeadersVisible = false;
             this.DgCategorie.RowHeadersWidth = 40;
             this.DgCategorie.RowTemplate.Height = 28;
@@ -268,9 +269,10 @@
             this.btnImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnImprimer.ForeColor = System.Drawing.Color.White;
-            this.btnImprimer.Location = new System.Drawing.Point(14, 443);
+            this.btnImprimer.Location = new System.Drawing.Point(16, 407);
+            this.btnImprimer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimer.Name = "btnImprimer";
-            this.btnImprimer.Size = new System.Drawing.Size(242, 34);
+            this.btnImprimer.Size = new System.Drawing.Size(240, 38);
             this.btnImprimer.TabIndex = 98;
             this.btnImprimer.Text = "🖨️  &Imprimer";
             this.btnImprimer.UseVisualStyleBackColor = false;
