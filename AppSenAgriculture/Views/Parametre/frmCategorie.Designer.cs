@@ -34,11 +34,11 @@
             this.lblPageIcon = new System.Windows.Forms.Label();
             this.lblPageTitle = new System.Windows.Forms.Label();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelGoldBar = new System.Windows.Forms.Panel();
             this.lblIdIcon = new System.Windows.Forms.Label();
             this.lblDescIcon = new System.Windows.Forms.Label();
             this.panelRight = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgCategorie)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.panelLeft.SuspendLayout();
@@ -72,13 +72,15 @@
             this.DgCategorie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgCategorie.EnableHeadersVisualStyles = false;
             this.DgCategorie.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(195)))), ((int)(((byte)(160)))));
-            this.DgCategorie.Location = new System.Drawing.Point(9, 8);
+            this.DgCategorie.Location = new System.Drawing.Point(10, 10);
+            this.DgCategorie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DgCategorie.Name = "DgCategorie";
+            this.DgCategorie.ReadOnly = true;
             this.DgCategorie.RowHeadersVisible = false;
             this.DgCategorie.RowHeadersWidth = 40;
             this.DgCategorie.RowTemplate.Height = 28;
             this.DgCategorie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgCategorie.Size = new System.Drawing.Size(821, 502);
+            this.DgCategorie.Size = new System.Drawing.Size(924, 628);
             this.DgCategorie.TabIndex = 0;
             // 
             // label1
@@ -86,9 +88,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(110)))), ((int)(((byte)(75)))));
-            this.label1.Location = new System.Drawing.Point(36, 64);
+            this.label1.Location = new System.Drawing.Point(40, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 18);
+            this.label1.Size = new System.Drawing.Size(180, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Libellé";
             // 
@@ -98,9 +100,10 @@
             this.txtLibelle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLibelle.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtLibelle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(35)))), ((int)(((byte)(20)))));
-            this.txtLibelle.Location = new System.Drawing.Point(14, 85);
+            this.txtLibelle.Location = new System.Drawing.Point(16, 106);
+            this.txtLibelle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLibelle.Name = "txtLibelle";
-            this.txtLibelle.Size = new System.Drawing.Size(218, 30);
+            this.txtLibelle.Size = new System.Drawing.Size(245, 34);
             this.txtLibelle.TabIndex = 2;
             // 
             // txtDescription
@@ -109,11 +112,12 @@
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(35)))), ((int)(((byte)(20)))));
-            this.txtDescription.Location = new System.Drawing.Point(14, 149);
+            this.txtDescription.Location = new System.Drawing.Point(16, 186);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescription.Size = new System.Drawing.Size(242, 80);
+            this.txtDescription.Size = new System.Drawing.Size(272, 100);
             this.txtDescription.TabIndex = 4;
             // 
             // label2
@@ -121,9 +125,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(110)))), ((int)(((byte)(75)))));
-            this.label2.Location = new System.Drawing.Point(36, 128);
+            this.label2.Location = new System.Drawing.Point(40, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 18);
+            this.label2.Size = new System.Drawing.Size(200, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Description";
             // 
@@ -136,9 +140,10 @@
             this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAjouter.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnAjouter.ForeColor = System.Drawing.Color.White;
-            this.btnAjouter.Location = new System.Drawing.Point(14, 248);
+            this.btnAjouter.Location = new System.Drawing.Point(16, 310);
+            this.btnAjouter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(242, 34);
+            this.btnAjouter.Size = new System.Drawing.Size(272, 42);
             this.btnAjouter.TabIndex = 5;
             this.btnAjouter.Text = "➕  &Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = false;
@@ -153,9 +158,10 @@
             this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifier.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnModifier.ForeColor = System.Drawing.Color.White;
-            this.btnModifier.Location = new System.Drawing.Point(14, 290);
+            this.btnModifier.Location = new System.Drawing.Point(16, 362);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(242, 34);
+            this.btnModifier.Size = new System.Drawing.Size(272, 42);
             this.btnModifier.TabIndex = 6;
             this.btnModifier.Text = "✏️  &Modifier";
             this.btnModifier.UseVisualStyleBackColor = false;
@@ -170,9 +176,10 @@
             this.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSupprimer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnSupprimer.ForeColor = System.Drawing.Color.White;
-            this.btnSupprimer.Location = new System.Drawing.Point(14, 332);
+            this.btnSupprimer.Location = new System.Drawing.Point(16, 415);
+            this.btnSupprimer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(242, 34);
+            this.btnSupprimer.Size = new System.Drawing.Size(272, 42);
             this.btnSupprimer.TabIndex = 7;
             this.btnSupprimer.Text = "🗑️  &Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
@@ -187,9 +194,10 @@
             this.btnSelection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelection.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Bold);
             this.btnSelection.ForeColor = System.Drawing.Color.White;
-            this.btnSelection.Location = new System.Drawing.Point(14, 12);
+            this.btnSelection.Location = new System.Drawing.Point(16, 15);
+            this.btnSelection.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSelection.Name = "btnSelection";
-            this.btnSelection.Size = new System.Drawing.Size(130, 30);
+            this.btnSelection.Size = new System.Drawing.Size(146, 38);
             this.btnSelection.TabIndex = 8;
             this.btnSelection.Text = "🔍  Selectionner";
             this.btnSelection.UseVisualStyleBackColor = false;
@@ -200,8 +208,9 @@
             this.panelAccentTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(168)))), ((int)(((byte)(60)))));
             this.panelAccentTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAccentTop.Location = new System.Drawing.Point(0, 0);
+            this.panelAccentTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelAccentTop.Name = "panelAccentTop";
-            this.panelAccentTop.Size = new System.Drawing.Size(1109, 5);
+            this.panelAccentTop.Size = new System.Drawing.Size(1248, 6);
             this.panelAccentTop.TabIndex = 3;
             // 
             // panelTitleBar
@@ -210,9 +219,10 @@
             this.panelTitleBar.Controls.Add(this.lblPageIcon);
             this.panelTitleBar.Controls.Add(this.lblPageTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(0, 5);
+            this.panelTitleBar.Location = new System.Drawing.Point(0, 6);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1109, 44);
+            this.panelTitleBar.Size = new System.Drawing.Size(1248, 55);
             this.panelTitleBar.TabIndex = 2;
             // 
             // lblPageIcon
@@ -220,9 +230,9 @@
             this.lblPageIcon.BackColor = System.Drawing.Color.Transparent;
             this.lblPageIcon.Font = new System.Drawing.Font("Segoe UI Emoji", 13F);
             this.lblPageIcon.ForeColor = System.Drawing.Color.White;
-            this.lblPageIcon.Location = new System.Drawing.Point(11, 7);
+            this.lblPageIcon.Location = new System.Drawing.Point(12, 9);
             this.lblPageIcon.Name = "lblPageIcon";
-            this.lblPageIcon.Size = new System.Drawing.Size(28, 28);
+            this.lblPageIcon.Size = new System.Drawing.Size(32, 35);
             this.lblPageIcon.TabIndex = 98;
             this.lblPageIcon.Text = "📂";
             this.lblPageIcon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -232,9 +242,9 @@
             this.lblPageTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblPageTitle.Font = new System.Drawing.Font("Georgia", 13F, System.Drawing.FontStyle.Bold);
             this.lblPageTitle.ForeColor = System.Drawing.Color.White;
-            this.lblPageTitle.Location = new System.Drawing.Point(43, 10);
+            this.lblPageTitle.Location = new System.Drawing.Point(48, 12);
             this.lblPageTitle.Name = "lblPageTitle";
-            this.lblPageTitle.Size = new System.Drawing.Size(220, 24);
+            this.lblPageTitle.Size = new System.Drawing.Size(248, 30);
             this.lblPageTitle.TabIndex = 99;
             this.lblPageTitle.Text = "Catégorie";
             // 
@@ -254,26 +264,45 @@
             this.panelLeft.Controls.Add(this.btnModifier);
             this.panelLeft.Controls.Add(this.btnSupprimer);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 49);
+            this.panelLeft.Location = new System.Drawing.Point(0, 61);
+            this.panelLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(270, 518);
+            this.panelLeft.Size = new System.Drawing.Size(304, 648);
             this.panelLeft.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(160)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(16, 468);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(272, 42);
+            this.button1.TabIndex = 98;
+            this.button1.Text = "🖨️  &Imprimer";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // panelGoldBar
             // 
             this.panelGoldBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(168)))), ((int)(((byte)(60)))));
-            this.panelGoldBar.Location = new System.Drawing.Point(14, 54);
+            this.panelGoldBar.Location = new System.Drawing.Point(16, 68);
+            this.panelGoldBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelGoldBar.Name = "panelGoldBar";
-            this.panelGoldBar.Size = new System.Drawing.Size(40, 3);
+            this.panelGoldBar.Size = new System.Drawing.Size(45, 4);
             this.panelGoldBar.TabIndex = 9;
             // 
             // lblIdIcon
             // 
             this.lblIdIcon.BackColor = System.Drawing.Color.Transparent;
             this.lblIdIcon.Font = new System.Drawing.Font("Segoe UI Emoji", 8.5F);
-            this.lblIdIcon.Location = new System.Drawing.Point(14, 64);
+            this.lblIdIcon.Location = new System.Drawing.Point(16, 80);
             this.lblIdIcon.Name = "lblIdIcon";
-            this.lblIdIcon.Size = new System.Drawing.Size(20, 18);
+            this.lblIdIcon.Size = new System.Drawing.Size(22, 22);
             this.lblIdIcon.TabIndex = 97;
             this.lblIdIcon.Text = "🏷️";
             // 
@@ -281,9 +310,9 @@
             // 
             this.lblDescIcon.BackColor = System.Drawing.Color.Transparent;
             this.lblDescIcon.Font = new System.Drawing.Font("Segoe UI Emoji", 8.5F);
-            this.lblDescIcon.Location = new System.Drawing.Point(14, 128);
+            this.lblDescIcon.Location = new System.Drawing.Point(16, 160);
             this.lblDescIcon.Name = "lblDescIcon";
-            this.lblDescIcon.Size = new System.Drawing.Size(20, 18);
+            this.lblDescIcon.Size = new System.Drawing.Size(22, 22);
             this.lblDescIcon.TabIndex = 97;
             this.lblDescIcon.Text = "📝";
             // 
@@ -292,39 +321,25 @@
             this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(218)))));
             this.panelRight.Controls.Add(this.DgCategorie);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRight.Location = new System.Drawing.Point(270, 49);
+            this.panelRight.Location = new System.Drawing.Point(304, 61);
+            this.panelRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Padding = new System.Windows.Forms.Padding(9, 8, 9, 8);
-            this.panelRight.Size = new System.Drawing.Size(839, 518);
+            this.panelRight.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.panelRight.Size = new System.Drawing.Size(944, 648);
             this.panelRight.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(30, 30, 160);
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(14, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 34);
-            this.button1.TabIndex = 98;
-            this.button1.Text = "🖨️  &Imprimer";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmCategorie
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(218)))));
-            this.ClientSize = new System.Drawing.Size(1109, 567);
+            this.ClientSize = new System.Drawing.Size(1248, 709);
             this.ControlBox = false;
             this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelAccentTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCategorie";
             this.Text = "Categorie";
             this.Load += new System.EventHandler(this.frmCategorie_Load);

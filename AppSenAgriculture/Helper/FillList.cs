@@ -30,7 +30,7 @@ namespace AppSenAgriculture.Helper
             {
                 var item = new ListItem
                 {
-                    Value = t.CodeUnite,
+                    Value = t.idUnite.ToString(),
                     Text = t.NameUnite
                 };
                 laliste.Add(item);
@@ -53,7 +53,7 @@ namespace AppSenAgriculture.Helper
             laliste.Add(new ListItem
             {
                 Value = null,
-                Text = "Sélectionnez une unité de mesure....."
+                Text = "Sélectionnez une categorie....."
             });
             foreach (var t in unites)
             {
